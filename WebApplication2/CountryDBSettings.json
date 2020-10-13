@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "CountryDB": "Server=(localdb)\\MSSQLLocalDB;Database=CountryDataBase;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

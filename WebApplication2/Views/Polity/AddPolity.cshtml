@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>AddPolity</title>
+</head>
+<body>
+    @using (Html.BeginForm("AddPolity", "Polity", FormMethod.Post))
+    {
+        <label>Название: </label>
+        <input id="Name" type="text" name="Name" /><br /><br /><br />
+
+        <input type="submit" name="name" value="Добавить" />
+
+    }
+    <div>
+        <div>
+            <a href="@Url.Action("HomePage","Home")">на главную</a> <a href="@Url.Action("ShowPolity","Polity")">к списку</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

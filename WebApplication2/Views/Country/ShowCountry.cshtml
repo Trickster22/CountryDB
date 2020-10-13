@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CountryProject.Storage.Entity.Country>
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>ShowCountries</title>
+</head>
+<body>
+    <div>
+        <h1>Страны</h1>
+        @foreach (var item in Model)
+        {
+            
+            <label>Название: </label> @item.Name <br />
+            <label>Материк: </label> @item.Mainland <br />
+            <label>Площадь: </label> @item.Area <br />
+            <a href="@Url.Action("UpdateCountry","Country", new { Id = item.Id })">редактировать страну</a> <a href = "@Url.Action("ShowAll","Country",new { Id = item.Id })" > Подробнее  </a><br /><br /><br />
+
+
+
+
+        }
+        
+            <div>
+                <a href="@Url.Action("AddCountry","Country")" type="button" >Добавить новую страну</a> <a href="@Url.Action("HomePage","Home")">на главную</a> 
+            </div>
+        
+    </div>
+</body>
+</html>
+

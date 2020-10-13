@@ -1,0 +1,62 @@
+﻿
+@model CountryProject.Storage.Entity.Country
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>ShowCountries</title>
+</head>
+<body>
+    <div>
+        <h1>Страны</h1>
+
+
+
+        <label>Название: </label> @Model.Name <br />
+        <label>Материк: </label> @Model.Mainland <br />
+        <label>Площадь: </label> @Model.Area <br />
+        @if (Model.faith != null)
+        {
+            <label>Религия: </label> @Model.faith.Name<br />
+        }
+        else
+        {
+            <label>Религия:  ----</label> <br />
+        }
+        @if (Model.Polity != null)
+        {
+            <label>Форма правления:</label> @Model.Polity.Name<br />
+        }
+        else
+        {
+            <label>Форма правления: ----</label> <br />
+        }
+
+
+
+
+        <a href="@Url.Action("UpdateCountry","Country", new { Id = Model.Id })">редактировать страну</a><br /><br /><br />
+
+
+
+
+
+
+        <div>
+            <a href="@Url.Action("AddCountry","Country")" type="button">Добавить новую страну</a> <a href="@Url.Action("HomePage","Home")">на главную</a>
+        </div>
+
+    </div>
+</body>
+</html>
+

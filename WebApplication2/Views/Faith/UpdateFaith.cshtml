@@ -1,0 +1,36 @@
+﻿@model CountryProject.Storage.Entity.Faith
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>UpdateFaith</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("UpdateFaith", "Faith", FormMethod.Post))
+        {
+            <input id="Faithid" name="Faithid" type="hidden" value="@Model.Id" />
+
+            <label>Название религии: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br /><br />
+
+
+
+            <input type="submit" value="Сохранить" />
+        }
+        <div>
+             <a href="@Url.Action("HomePage","Home")">на главную</a> <a href="@Url.Action("ShowFaith","Faith")">к списку</a>
+        </div>
+    </div>
+</body>
+</html>

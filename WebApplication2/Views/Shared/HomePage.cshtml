@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>HomePage</title>
+</head>
+<body>
+    <div>
+        <h1>Географическая БД</h1>
+
+        <div>
+            <a href="@Url.Action("ShowCountry","Country")" type="button">Страны</a>
+        </div>
+        <div>
+            <a href="@Url.Action("ShowFaith","Faith")" type="button">Релиии</a>
+        </div>
+        <div>
+            <a href="@Url.Action("ShowPolity","Polity")" type="button">Форма правления</a>
+        </div>
+    </div>
+</body>
+

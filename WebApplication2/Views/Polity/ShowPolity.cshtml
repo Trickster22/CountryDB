@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CountryProject.Storage.Entity.Polity>
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>ShowPolity</title>
+</head>
+<body>
+    <div>
+        <h1>Форма правления</h1>
+        @foreach (var item in Model)
+        {
+
+            <label>Название: </label> @item.Name <br />
+            
+           
+
+
+
+        }
+        <div>
+            <div>
+                <a href="@Url.Action("AddPolity","Polity")" type="button">Добавить</a> <a href="@Url.Action("HomePage","Home")">на главную</a> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

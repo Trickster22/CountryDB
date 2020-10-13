@@ -1,0 +1,46 @@
+﻿@model CountryProject.Storage.Entity.Country
+@{
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>UpdateCountry</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("UpdateCountry", "Country", FormMethod.Post))
+        {
+            <input id="Id" name="Id" type="hidden" value="@Model.Id" />
+
+            <label>Название страны: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br /><br />
+
+            <label>Материк: </label>
+            <input id="Mainland" type="text" name="Mainland" value="@Model.Mainland" /><br /><br /><br />
+
+            <label>Площадь: </label>
+            <input id="Area" type="text" name="Area" value="@Model.Area" /><br /><br /><br />
+
+            <label>Религия: </label>
+            <input id="FaithName" type="text" name="FaithName" /><br /><br /><br />
+
+            <label>Форма правления: </label>
+            <input id="PolityName" type="text" name="PolityName" value="@Model.Polity.Name" /><br /><br /><br />
+
+            <input type="submit" value="Сохранить" />
+        }
+    </div>
+    <div>
+         <a href="@Url.Action("HomePage","Home")">на главную</a> <a href="@Url.Action("ShowCountry","Country")">к списку</a>
+    </div>
+</body>
+</html>

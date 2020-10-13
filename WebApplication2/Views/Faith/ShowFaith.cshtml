@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CountryProject.Storage.Entity.Faith>
+@{ 
+    Layout = null;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width"/>
+    <title>ShowFaith</title>
+</head>
+<body>
+    <div>
+        <h1>Вероисповедание</h1>
+        @foreach (var item in Model)
+        {
+            
+            <label>Название: </label> @item.Name <br />
+            <a href="/Faith/UpdateFaith/@item.Id">редактировать религию</a><br /><br /><br />
+            @using (Html.BeginForm("Delete","Faith",FormMethod.Post))
+            {
+            <input type="hidden" name="Id" value="@item.Id" />
+            <button type="submit">Удалить</button>
+
+            }
+
+
+
+        }
+    <div>
+        <div>
+            <a href="@Url.Action("AddFaith","Faith")" type="button">Добавить</a> <a href="@Url.Action("HomePage","Home")">на главную</a> 
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
